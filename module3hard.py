@@ -12,7 +12,7 @@ def sum_elements(data_structure):
     elif isinstance(element, dict):
       for key, value in element.items():
         total += len(key)  # Суммируем длину ключа
-        total += sum_elements([value])  # суммируем значения
+        total += sum_elements([value])  # суммируем значения любых элементов, которые могут быть внутри
     else:
       pass
   return total
