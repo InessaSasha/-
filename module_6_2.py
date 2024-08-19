@@ -17,6 +17,7 @@ class Vehicle:
 
     def set_color(self, new_color: str):
         new_color_lower = new_color.lower()
+        #нашла эту конструкцию, чтобы понизить регистр в списке во всём
         if new_color_lower in [color.lower() for color in Vehicle.__COLOR_VARIANTS]:
             self.__color = new_color
         else:
