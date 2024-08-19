@@ -4,12 +4,6 @@ class Animal:
         self.fed = False #Животное изначально не накормлено
         self.name = name
 
-class Plant:
-    def __init__(self, name):
-        self.edible = False # растение изначально несъедобное
-        self.name = name
-
-class Mammal(Animal):
     def eat(self, food):
         if food.edible: #проверяем съедобно ли растение
             print(f"{self.name} съел {food.name}")
@@ -18,23 +12,25 @@ class Mammal(Animal):
             print(f"{self.name} не стал есть {food.name}")
             self.alive = False #животное не стало есть и погибло
 
+class Plant:
+    edible = False # растение изначально несъедобное
+    def __init__(self, name):
+        self.name = name
+
+class Mammal(Animal):
+    pass
+
 class Predator(Animal):
-    def eat(self, food):
-        if food.edible:
-            print(f"{self.name} съел {food.name}")
-            self.fed = True
-        else:
-            print(f"{self.name} не стал есть {food.name}")
-            self.alive = False
+    pass
 
 class Flower(Plant):
     pass
 
 class Fruit(Plant):
+    edible = True  # фрукт изначально съедобное
     def __init__(self, name):
         super().__init__(name) # super() берем, чтобы взять атрибуты из
         # родительского класса Plant
-        self.edible = True
 
 # Создаем объекты
 a1 = Predator('Волк с Уолл-Стрит')
