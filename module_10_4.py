@@ -39,12 +39,15 @@ class Cafe:
         while not self.queue.empty() or any(table.guest and table.guest.is_alive() for table in self.tables):
             for table in self.tables:
                 if table.guest and not table.guest.is_alive():
+                    # Проверяем, не был ли гость уже обслужен
                     if table.guest.name not in self.left_guests:
                         print(f"{table.guest.name} покушал(-а) и ушел(-ла)")
                         print(f"Стол номер {table.number} свободен")
-                        self.left_guests.append(table.guest.name)
+                        self.left_guests.append(table.guest.name)  # Добавляем гостя в список обслуженных
+                    # Очищаем стол
                     table.guest = None
 
+                    # Берем нового гостя из очереди, если она не пуста
                     if not self.queue.empty():
                         new_guest = self.queue.get()
                         # Проверка на повторный вывод здесь!
