@@ -16,7 +16,7 @@ class Guest(Thread):
     def run(self):
         wait_time = random.randint(3, 10)
         time.sleep(wait_time)
-        print(f"{self.name} покушал(-а) и ушел(-ла)")
+        
 
 class Cafe:
     def __init__(self, *tables):
