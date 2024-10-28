@@ -18,7 +18,7 @@ class RunnerTest(unittest.TestCase):
             logging.info(f'"test_walk" выполнен успешно')
             runner1 = runner.Runner("Бегун 1", speed=-1)
         except Exception as e:
-            logging.warning('Неверная скорость для Runner')
+            logging.warning('Неверная скорость для Runner', exc_info=True)
 
         for _ in range(10):
             runner1.walk()
@@ -31,7 +31,7 @@ class RunnerTest(unittest.TestCase):
             logging.info(f'"test_run" выполнен успешно')
             runner2 = runner.Runner("Бегун 2", speed='df')
         except TypeError as e:
-            logging.warning(f"Неверный тип данных для объекта Runner")
+            logging.warning(f"Неверный тип данных для объекта Runner", exc_info=True)
 
         for _ in range(10):
             runner2.run()
