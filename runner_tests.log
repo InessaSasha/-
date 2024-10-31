@@ -9,6 +9,6 @@ INFO| "test_walk" выполнен успешно
 WARNING| Неверная скорость для Runner
 Traceback (most recent call last):
   File "/Users/gospoza/PycharmProjects/homework5/Git/домашка/tests_12_4.py", line 19, in test_walk
-    runner1 = runner.Runner("Бегун 1", speed=-1)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    runner1 = runner.Runner("Бегун 1", speed=-10)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 TypeError: Runner.__init__() got an unexpected keyword argument 'speed'
