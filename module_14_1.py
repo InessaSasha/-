@@ -40,7 +40,11 @@ cursor.execute("SELECT * FROM Users WHERE age !=?", (60,))
 users = cursor.fetchall()
 
 for user in users:
-    print(user)
+    username = user[1]  # Имя
+    email = user[2]  # Почта
+    age = user[3]  # Возраст
+    balance = user[4]  # Баланс
+    print(f'Имя: {username} | Почта: {email} | Возраст: {age} | Баланс: {balance}')
 
 
 connection.commit()
